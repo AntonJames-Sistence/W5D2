@@ -53,6 +53,14 @@ def small_and_wealthy
   # Show the name and continent of countries where the area is less than 2,000
   # and the gdp is more than 5,000,000,000.
   execute(<<-SQL)
+  SELECT
+    name, continent
+  FROM
+    countries
+  WHERE
+    area < 2000
+    AND
+    gdp > 5000000000;
   SQL
 end
 
@@ -60,6 +68,13 @@ def scandinavia
   # Show the name and the population for 'Denmark', 'Finland', 'Norway', and
   # 'Sweden'
   execute(<<-SQL)
+  SELECT 
+    name, population
+  FROM
+    countries
+  WHERE
+    name IN ('Denmark', 'Finland', 'Norway', 'Sweden');
+
   SQL
 end
 
